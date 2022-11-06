@@ -10,21 +10,21 @@ if option == 'home':
 if option == 'Linear Regression All Data':
     value_1 = st.number_input('inlet feed [kg/h]')
 
-    value_2 = st.text_input('inlet polymer wt%')
+    value_2 = st.number_input('inlet polymer wt%')
 
-    value_3 = st.text_input('inlet A wt%')
+    value_3 = st.number_input('inlet A wt%')
 
-    value_4 = st.text_input('inlet B wt%')
+    value_4 = st.number_input('inlet B wt%')
 
-    value_5 = st.text_input('inlet temp [degC]')
+    value_5 = st.number_input('inlet temp [degC]')
 
-    value_6 = st.text_input('pressure [MPa]')
+    value_6 = st.number_input('pressure [MPa]')
 
-    value_7 = st.text_input('liquid level [m]')
+    value_7 = st.number_input('liquid level [m]')
 
-    value_8 = st.text_input('rotate speed [rpm]')
+    value_8 = st.number_input('rotate speed [rpm]')
 
-    value_9 = st.text_input('bottom temp [degC]')
+    value_9 = st.number_input('bottom temp [degC]')
 
     
     if value_9:
@@ -61,9 +61,7 @@ if option == 'Linear Regression Correlation Data':
         total_poly = 100 - (predicteda + predictedb)
         st.write(f'total predicted polymer % is {total_poly}')
         
-    # for x in X:
-    #     predictedout = regr.predict([[x[1],x[5], x[6]]])
-    #     (predictedout)
+
 
 
 
