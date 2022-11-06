@@ -1,0 +1,16 @@
+the t and loss value we dont need. 
+
+to get total % we need to add a + b and subtract 100. 
+
+-2.5620332e-04
+7.8522271e-01  
+8.2543677e-01
+3.5442629e+00
+3.2703043e-03
+-1.3718221e+02
+-7.6586172e-02
+2.4416444e-03
+2.9435358e-03
+b = 1.8482590913772583
+
+%of polymer
