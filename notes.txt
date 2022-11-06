@@ -14,3 +14,6 @@ to get total % we need to add a + b and subtract 100.
 b = 1.8482590913772583
 
 %of polymer
+
+
+    

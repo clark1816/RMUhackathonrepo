@@ -5,7 +5,11 @@ from sklearn import linear_model
 #,,,,,,liquid level [m],rotate speed [rpm],,,outlet A wt%,outlet B wt%
 option = st.sidebar.selectbox("Which Dashboard?", ('home','Linear Regression Correlation Data', 'Linear Regression All Data', 'Hybrid'),0)
 if option == 'home':
+    st.header('Meet the Team')    
+    st.image('RomosGold.jpg')
     st.write('ROMOs Gold the Gold Standard in Adventuring')
+    st.write('Software Team: Harry and Clark')
+    st.write('Biomedical / Chemistry Team: Amanda and Leia')
 
 if option == 'Linear Regression All Data':
     st.header('Linear Regression All Data')
@@ -93,11 +97,32 @@ if option == 'Hybrid':
     value_8 = st.number_input('rotate speed [rpm]')
 
     value_9 = st.number_input('bottom temp [degC]')
+    
+    #change these values 
+    #density = a*C(degrees)+b
+    value_10 = -1.2707*value_5+925.11
+    value_11 = -1.2707*value_9+925.11
+    value_12 = -0.7598*value_5+1020.6
+    value_13 = -0.7598*value_9+1020.6
+    value_14 = -0.7092*value_5+1248.7
+    value_15 = -0.7092*value_9+1248.7
 
     
     if value_9:
-        outletpolym = (-2.5620332e-04*value_1) + (7.8522271e-01*value_2) + (8.2543677e-01*value_3) + (3.5442629e+00*value_4) + (3.2703043e-03*value_5) + (-1.3718221e+02*value_6) + (-7.6586172e-02*value_7) + (2.4416444e-03*value_8) + (2.9435358e-03*value_9)
-        st.write(f'Write answer: {outletpolym}')
+        outletb = (3.0346154e-04*value_1) + (4.9141365e-01*value_2) + (4.4068372e-01*value_3) + (-2.8392928*value_4) + ( -2.3127261e-01*value_5) + (5.1315887e+01*value_6) + (-2.2837190e-02*value_7) + ( -3.3287513e-03*value_8) + ( 4.0363985e-01*value_9) + 0.48465901613235474 + (value_10*-5.6526303e-01)+ (value_11*7.3614556e-01)+(value_12*5.6254750e-01)+(value_13*-1.7261361e-01)+(value_14*8.6331263e-02)+(value_15*-5.6185305e-01)
+        
+        outletpoly = (-2.9273261e-04*value_1) + (5.8944124e-01*value_2) + (6.1098981e-01*value_3) + (2.3368397e+00*value_4) + ( 1.1619869e+00*value_5) + (-6.5066833e+01*value_6) + (1.0090161e-02*value_7) + ( 3.0155266e-03*value_8) + ( -6.9166225e-01*value_9) + -0.2506895959377289 + (value_10*-1.0483562e+00)+ (value_11*-6.1003977e-01)+(value_12*5.1095623e-01)+(value_13*1.5999396e-01)+(value_14*-7.9202187e-01)+(value_15*-5.6561343e-02)
+        
+        outleta = 100 - outletpoly - outletb
+        
+        st.write(f'outlet polymer wt%: {outletpoly}')
+        st.write(f'outlet B wt%: {outletb}')
+        st.write(f'outlet A wt%: {outleta}')
+        
+        
+        
+        
+        
 
 
 
