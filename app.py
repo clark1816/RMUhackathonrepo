@@ -37,8 +37,8 @@ if option == 'Linear Regression All Data':
         a_value = Poly_value - b_value
         
         st.write(f'Total Polymer %: {Poly_value}')
-        st.write(f'Polymer A% %: {a_value}')
-        st.write(f'Polymer A% %: {b_value}')
+        st.write(f'Polymer A%: {a_value}')
+        st.write(f'Polymer B%: {b_value}')
         
         
 
