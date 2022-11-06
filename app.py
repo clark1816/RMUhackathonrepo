@@ -8,23 +8,23 @@ if option == 'home':
     st.write('ROMOs Gold the Gold Standard in Adventuring')
 
 if option == 'Linear Regression All Data':
-    value_1 = st.text_input(label="inlet feed [kg/h]", value="")
+    value_1 = st.number_input('inlet feed [kg/h]')
 
-    value_2 = st.text_input(label="inlet polymer wt%", value="")
+    value_2 = st.text_input('inlet polymer wt%')
 
-    value_3 = st.text_input(label="inlet A wt%", value="")
+    value_3 = st.text_input('inlet A wt%')
 
-    value_4 = st.text_input(label="inlet B wt%", value="")
+    value_4 = st.text_input('inlet B wt%')
 
-    value_5 = st.text_input(label="inlet temp [degC]", value="")
+    value_5 = st.text_input('inlet temp [degC]')
 
-    value_6 = st.text_input(label="pressure [MPa]", value="")
+    value_6 = st.text_input('pressure [MPa]')
 
-    value_7 = st.text_input(label="liquid level [m]", value="")
+    value_7 = st.text_input('liquid level [m]')
 
-    value_8 = st.text_input(label="rotate speed [rpm]", value="")
+    value_8 = st.text_input('rotate speed [rpm]')
 
-    value_9 = st.text_input(label="bottom temp [degC]", value="")
+    value_9 = st.text_input('bottom temp [degC]')
 
     
     if value_9:
