@@ -8,6 +8,7 @@ if option == 'home':
     st.write('ROMOs Gold the Gold Standard in Adventuring')
 
 if option == 'Linear Regression All Data':
+    st.header('Linear Regression All Data')
     value_1 = st.number_input('inlet feed [kg/h]')
 
     value_2 = st.number_input('inlet polymer wt%')
@@ -34,7 +35,7 @@ if option == 'Linear Regression All Data':
         b_value = (2.5583830e-04*value_1) + (1.9988307e-01*value_2) + (1.3920839e-01*value_3) + (-3.6337156*value_4) + ( -1.5648461e-03*value_5) + (1.4676350e+02*value_6) + (9.1752745e-02*value_7) + (-2.5921480e-03
 *value_8) + (-3.2897484e-03*value_9) +2.2742693424224854
         
-        a_value = Poly_value - b_value
+        a_value = 100 - Poly_value - b_value
         
         st.write(f'Total Polymer %: {Poly_value}')
         st.write(f'Polymer A%: {a_value}')
@@ -43,7 +44,8 @@ if option == 'Linear Regression All Data':
         
 
 if option == 'Linear Regression Correlation Data':
-    st.write('option 2')
+    
+    st.header('Linear Regression Correlating Data')
     df = pandas.read_csv("hackdata.csv")
     X = df[['inlet polymer wt%','pressure [MPa]', 'liquid level [m]']]
     #h = df.values.tolist()
