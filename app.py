@@ -3,7 +3,7 @@ import pandas
 from sklearn import linear_model
 
 #,,,,,,liquid level [m],rotate speed [rpm],,,outlet A wt%,outlet B wt%
-option = st.sidebar.selectbox("Which Dashboard?", ('home', 'Linear Regression All Data', 'Hybrid'),0)
+option = st.sidebar.selectbox("Which Dashboard?", ('home','Linear Regression Correlation Data', 'Linear Regression All Data', 'Hybrid'),0)
 if option == 'home':
     st.write('ROMOs Gold the Gold Standard in Adventuring')
 
