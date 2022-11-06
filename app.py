@@ -63,8 +63,8 @@ if option == 'Linear Regression Correlation Data':
     regr_b.fit(X, y1)
     regr_a.fit(X, y2)
 
-    st.write(regr_b.coef_)
-    st.write(regr_a.coef_)
+    # st.write(regr_b.coef_)
+    # st.write(regr_a.coef_)
     value_1 = st.number_input('inlet polymer wt%')
 
     value_2 = st.number_input('pressure [MPa]')
