@@ -51,7 +51,7 @@ if option == 'Linear Regression Correlation Data':
     
     st.header('Linear Regression Correlating Data')
     df = pandas.read_csv("hackdata.csv")
-    X = df[['inlet polymer wt%','pressure [MPa]', 'liquid level [m]']]
+    X = df[['inlet temp [degC]','pressure [MPa]', 'bottom temp [degC]']]
     #h = df.values.tolist()
 
     y1 = df['outlet B wt%']
@@ -65,11 +65,11 @@ if option == 'Linear Regression Correlation Data':
 
     # st.write(regr_b.coef_)
     # st.write(regr_a.coef_)
-    value_1 = st.number_input('inlet polymer wt%')
+    value_1 = st.number_input('inlet temp [degC]')
 
     value_2 = st.number_input('pressure [MPa]')
 
-    value_3 = st.number_input('liquid level [m]')
+    value_3 = st.number_input('bottom temp [degC]')
     if value_3:
         predictedb = regr_b.predict([[value_1,value_2,value_3]])
         predicteda = regr_a.predict([[value_1,value_2,value_3]])
