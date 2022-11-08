@@ -10,6 +10,37 @@ if option == 'home':
     st.write('ROMOs Gold the Gold Standard in Adventuring')
     st.write('Software Team: Harry and Clark')
     st.write('Biomedical / Chemistry Team: Amanda and Leia')
+    
+if option == 'Linear Regression Correlation Data':
+    
+    st.header('Linear Regression Correlating Data')
+    df = pandas.read_csv("hackdata.csv")
+    X = df[['inlet temp [degC]','liquid level [m]', 'bottom temp [degC]']]
+    #h = df.values.tolist()
+
+    y1 = df['outlet B wt%']
+    y2 = df['outlet A wt%']
+
+    regr_b = linear_model.LinearRegression()
+    regr_a = linear_model.LinearRegression()
+    
+    regr_b.fit(X, y1)
+    regr_a.fit(X, y2)
+
+    # st.write(regr_b.coef_)
+    # st.write(regr_a.coef_)
+    value_1 = st.number_input('inlet temp [degC]')
+
+    value_2 = st.number_input('liquid level [m]')
+
+    value_3 = st.number_input('bottom temp [degC]')
+    if value_3:
+        predictedb = regr_b.predict([[value_1,value_2,value_3]])
+        predicteda = regr_a.predict([[value_1,value_2,value_3]])
+        st.write(f'the value of outlet B wt% is predicted to be {predictedb}')
+        st.write(f'the value of outlet A wt% is predicted to be {predicteda}')
+        total_poly = 100 - (predicteda + predictedb)
+        st.write(f'total predicted polymer % is {total_poly}')
 
 if option == 'Linear Regression All Data':
     st.header('Linear Regression All Data')
@@ -44,39 +75,6 @@ if option == 'Linear Regression All Data':
         st.write(f'Total Polymer %: {Poly_value}')
         st.write(f'Polymer A%: {a_value}')
         st.write(f'Polymer B%: {b_value}')
-        
-        
-
-if option == 'Linear Regression Correlation Data':
-    
-    st.header('Linear Regression Correlating Data')
-    df = pandas.read_csv("hackdata.csv")
-    X = df[['inlet temp [degC]','liquid level [m]', 'bottom temp [degC]']]
-    #h = df.values.tolist()
-
-    y1 = df['outlet B wt%']
-    y2 = df['outlet A wt%']
-
-    regr_b = linear_model.LinearRegression()
-    regr_a = linear_model.LinearRegression()
-    
-    regr_b.fit(X, y1)
-    regr_a.fit(X, y2)
-
-    # st.write(regr_b.coef_)
-    # st.write(regr_a.coef_)
-    value_1 = st.number_input('inlet temp [degC]')
-
-    value_2 = st.number_input('liquid level [m]')
-
-    value_3 = st.number_input('bottom temp [degC]')
-    if value_3:
-        predictedb = regr_b.predict([[value_1,value_2,value_3]])
-        predicteda = regr_a.predict([[value_1,value_2,value_3]])
-        st.write(f'the value of outlet B wt% is predicted to be {predictedb}')
-        st.write(f'the value of outlet A wt% is predicted to be {predicteda}')
-        total_poly = 100 - (predicteda + predictedb)
-        st.write(f'total predicted polymer % is {total_poly}')
         
 
 if option == 'Hybrid':
@@ -119,20 +117,6 @@ if option == 'Hybrid':
         st.write(f'outlet B wt%: {outletb}')
         st.write(f'outlet A wt%: {outleta}')
         
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
 
 print('code completed')
 
